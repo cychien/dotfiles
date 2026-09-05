@@ -1,0 +1,21 @@
+# reference: herdr --default-config
+
+[keys]
+prefix = "ctrl+a"
+
+split_horizontal = "prefix+minus"
+split_vertical = "prefix+|"
+
+focus_pane_left = "prefix+left"
+focus_pane_down = "prefix+down"
+focus_pane_up = "prefix+up"
+focus_pane_right = "prefix+right"
+
+new_tab = "prefix+t"
+rename_tab = "prefix+shift+t"
+
+close_pane = "prefix+x"
+close_tab = "prefix+shift+x"
+
+workspace_picker = "prefix+w"
+goto = "prefix+space"
