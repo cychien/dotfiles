@@ -85,3 +85,7 @@ first:
 | `home.nix` | packages, zsh, starship, dotfile symlinks |
 | `home/` | the actual dotfiles, symlinked out of the store so edits are live |
 | `CLAUDE.md` | points Claude at `home/AGENTS.md`; edit that, not this |
+
+## Credits
+
+Inspired by [kunchenguid/dotfiles](https://github.com/kunchenguid/dotfiles).
