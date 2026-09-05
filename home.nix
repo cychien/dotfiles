@@ -65,10 +65,12 @@ in
 
   programs.git = {
     enable = true;
-    userName = "cychien";
-    userEmail = "xyz030206@gmail.com";
-    # macOS git still defaults to master
-    extraConfig.init.defaultBranch = "main";
+    settings = {
+      user.name = "cychien";
+      user.email = "xyz030206@gmail.com";
+      # macOS git still defaults to master
+      init.defaultBranch = "main";
+    };
   };
 
   home.file = {

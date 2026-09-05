@@ -22,7 +22,17 @@
     dock.autohide = true;
     finder.FXPreferredViewStyle = "Nlsv";  # list view by default
     finder.CreateDesktop = false;          # clean desktop
-    trackpad.Clicking = true;              # tap to click
+    trackpad = {
+      Clicking = true;           # tap to click
+      TrackpadRightClick = true; # two-finger tap for secondary click
+      # three fingers drag windows and select text, so the swipes move to four
+      TrackpadThreeFingerDrag = true;
+      TrackpadThreeFingerVertSwipeGesture = 0;
+      TrackpadThreeFingerHorizSwipeGesture = 0;
+      TrackpadFourFingerVertSwipeGesture = 2;   # mission control, app expose
+      TrackpadFourFingerHorizSwipeGesture = 2;  # switch full-screen apps
+    };
+    WindowManager.StandardHideWidgets = true;  # no widgets on the desktop
   };
   nix-homebrew = {
     enable = true;
@@ -40,6 +50,9 @@
     casks = [
       "ghostty"
       "claude-code"
+      "google-chrome"
+      "raycast"
+      "slack"
     ];
   };
 }

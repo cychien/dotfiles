@@ -27,10 +27,13 @@ wait.
 
 When it finishes, close Terminal and open a new one. You'll get a new prompt
 style, grey autocomplete suggestions as you type, and `nvim`, `rg`, `fzf` and
-friends on your PATH. Ghostty and Claude Code are installed too.
+friends on your PATH. Ghostty, Claude Code, Chrome, Raycast and Slack are
+installed too.
 
 A few things about your Mac will also change: the menu bar and the Dock hide
-themselves, desktop icons are gone, and the trackpad taps to click. Those are
+themselves, desktop icons and widgets are gone, the trackpad taps to click and
+two-finger taps for right click, and three fingers drag instead of swiping -
+Mission Control and full-screen switching move to four fingers. Those are
 deliberate settings, not breakage.
 
 **If you're not cychien:** this installs someone else's config. To make it your
