@@ -101,6 +101,9 @@ in
     ".config/nvim".source = linkDotfile "home/.config/nvim";
     ".config/ghostty".source = linkDotfile "home/.config/ghostty";
     ".claude/settings.json".source = linkDotfile "home/.claude/settings.json";
+    ".claude/skills".source = linkDotfile "home/.claude/skills";
+    # `npx skills` keeps its global install lockfile here
+    ".agents".source = linkDotfile "home/.agents";
   } // lib.genAttrs agentGuidelinePaths (_: {
     source = linkDotfile "home/AGENTS.md";
   });

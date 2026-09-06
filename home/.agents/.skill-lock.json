@@ -1,0 +1,32 @@
+{
+  "version": 3,
+  "skills": {
+    "eztweak": {
+      "source": "cychien/eztweak",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/cychien/eztweak.git",
+      "skillPath": "skills/eztweak/SKILL.md",
+      "skillFolderHash": "e45d1526f76fb33d4ad0197f1696e54045000980",
+      "installedAt": "2026-09-06T08:15:55.011Z",
+      "updatedAt": "2026-09-06T08:18:50.998Z"
+    }
+  },
+  "dismissed": {},
+  "lastSelectedAgents": [
+    "amp",
+    "antigravity",
+    "antigravity-cli",
+    "cline",
+    "codex",
+    "cursor",
+    "deepagents",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-code-cli",
+    "opencode",
+    "warp",
+    "zed",
+    "claude-code",
+    "pi"
+  ]
+}

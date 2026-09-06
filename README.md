@@ -63,6 +63,7 @@ which is where `home.nix` looks for the files it links out of the store.
 personal and worth a look before or after your first switch:
 
 - `home/AGENTS.md` - coding agent instructions, symlinked to four paths
+- `home/.agents/skills/` - global agent skills, installed with `npx skills add -g`
 - `home/.config/herdr/` - herdr's config
 - `home.nix` - shell aliases, packages, prompt
 - `configuration.nix` - Homebrew casks, macOS defaults
