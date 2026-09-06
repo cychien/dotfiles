@@ -51,6 +51,8 @@ in
     };
   };
 
+  programs.fzf.enable = true;  # ctrl+r history search, ctrl+t file picker
+
   programs.starship = {
     enable = true;
     settings = {
@@ -97,6 +99,8 @@ in
   home.file = {
     ".config/herdr".source = linkDotfile "home/.config/herdr";
     ".config/nvim".source = linkDotfile "home/.config/nvim";
+    ".config/ghostty".source = linkDotfile "home/.config/ghostty";
+    ".claude/settings.json".source = linkDotfile "home/.claude/settings.json";
   } // lib.genAttrs agentGuidelinePaths (_: {
     source = linkDotfile "home/AGENTS.md";
   });
