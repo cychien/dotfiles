@@ -27,6 +27,7 @@ in
     gh        # github cli, also handles push auth
     neovim
     nodejs    # lsp servers and formatters that ship as npm packages
+    pnpm
     # the font everything renders in
     nerd-fonts.hack
   ];
