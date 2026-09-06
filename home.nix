@@ -98,6 +98,8 @@ in
   '';
 
   home.file = {
+    # gitignored files fd/rg should still surface (so nvim pickers see them)
+    ".ignore".source = linkDotfile "home/.ignore";
     ".config/herdr".source = linkDotfile "home/.config/herdr";
     ".config/nvim".source = linkDotfile "home/.config/nvim";
     ".config/ghostty".source = linkDotfile "home/.config/ghostty";
