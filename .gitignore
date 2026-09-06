@@ -1,0 +1,3 @@
+# apps symlinked into place write runtime state next to their config
+home/.config/herdr/*
+!home/.config/herdr/config.toml
