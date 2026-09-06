@@ -26,6 +26,7 @@ in
     lazygit
     gh        # github cli, also handles push auth
     neovim
+    nodejs    # lsp servers and formatters that ship as npm packages
     # the font everything renders in
     nerd-fonts.hack
   ];
@@ -73,8 +74,29 @@ in
     };
   };
 
+  # lazy.nvim owns plugin installs, so rebuild drives it from the committed lockfile
+  home.activation.lazyvim = lib.hm.dag.entryAfter [ "linkGeneration" ] ''
+    PATH="${lib.makeBinPath [ pkgs.git ]}:$PATH"
+    nvim=${pkgs.neovim}/bin/nvim
+    masonBin="$HOME/.local/share/nvim/mason/bin"
+
+    run $nvim --headless "+Lazy! restore" +qa \
+      || echo "nvim: lazy.nvim restore failed, run :Lazy restore inside nvim"
+
+    # nvim-treesitter needs the tree-sitter CLI; mason is not driven by the lockfile
+    if [ ! -x "$masonBin/tree-sitter" ] \
+      || [ ! -x "$masonBin/stylua" ] \
+      || [ ! -x "$masonBin/shfmt" ]; then
+      run $nvim --headless \
+        -c "Lazy! load mason.nvim" \
+        -c "MasonInstall tree-sitter-cli stylua shfmt" -c qa \
+        || echo "nvim: mason install failed, run :Mason inside nvim"
+    fi
+  '';
+
   home.file = {
     ".config/herdr".source = linkDotfile "home/.config/herdr";
+    ".config/nvim".source = linkDotfile "home/.config/nvim";
   } // lib.genAttrs agentGuidelinePaths (_: {
     source = linkDotfile "home/AGENTS.md";
   });
