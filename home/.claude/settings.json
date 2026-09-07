@@ -1,5 +1,8 @@
 {
-  "model": "claude-opus-5[1m]",
-  "effort": "high",
-  "theme": "dark"
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
+  "theme": "dark",
+  "effort": "high"
 }
