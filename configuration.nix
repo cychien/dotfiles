@@ -66,10 +66,10 @@
       "figma"
       "google-chrome"
       "notion"
-      "opensuperwhisper"
       "raycast"
       "slack"
       "todoist-app"
+      "typeless"
     ];
   };
 }
