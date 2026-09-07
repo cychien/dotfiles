@@ -9,6 +9,15 @@
       "skillFolderHash": "e45d1526f76fb33d4ad0197f1696e54045000980",
       "installedAt": "2026-09-06T08:15:55.011Z",
       "updatedAt": "2026-09-06T08:18:50.998Z"
+    },
+    "chrome-devtools-axi": {
+      "source": "kunchenguid/chrome-devtools-axi",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/kunchenguid/chrome-devtools-axi.git",
+      "skillPath": "skills/chrome-devtools-axi/SKILL.md",
+      "skillFolderHash": "741c529ebbdc9f62c9362593701a6968267af6e6",
+      "installedAt": "2026-09-06T12:13:41.750Z",
+      "updatedAt": "2026-09-06T12:13:41.750Z"
     }
   },
   "dismissed": {},
