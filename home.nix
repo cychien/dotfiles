@@ -11,6 +11,18 @@ let
     ".codex/AGENTS.md"
     ".config/opencode/AGENTS.md"
   ];
+
+  # coding agents ship updates daily, so they come from their own installers
+  # rather than nixpkgs; both land in ~/.local/bin.
+  # the installers expect a normal macOS shell - home-manager's activation PATH
+  # has no curl or tar, and they rewrite a shell rc if the target is off PATH
+  officialInstall = name: url: lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -x "$HOME/.local/bin/${name}" ]; then
+      run env PATH="$HOME/.local/bin:/usr/bin:/bin:/usr/sbin:/sbin" \
+        /bin/bash -c "curl -fsSL ${url} | bash" \
+        || echo "${name}: install failed, run: curl -fsSL ${url} | bash"
+    fi
+  '';
 in
 
 {
@@ -33,6 +45,7 @@ in
   ];
   fonts.fontconfig.enable = true;
   home.sessionVariables.EDITOR = "nvim";
+  home.sessionPath = [ "${config.home.homeDirectory}/.local/bin" ];
 
   programs.zsh = {
     enable = true;
@@ -47,8 +60,8 @@ in
       push = "git push";
       pull = "git pull";
       m = "git switch main";
-      cc = "claude --dangerously-skip-permissions";
-      co = "codex --full-auto";
+      cc = "claude";
+      co = "codex --approve-for-me";
     };
   };
 
@@ -96,6 +109,9 @@ in
         || echo "nvim: mason install failed, run :Mason inside nvim"
     fi
   '';
+
+  home.activation.claudeCode = officialInstall "claude" "https://claude.ai/install.sh";
+  home.activation.codex = officialInstall "codex" "https://chatgpt.com/codex/install.sh";
 
   home.file = {
     # gitignored files fd/rg should still surface (so nvim pickers see them)

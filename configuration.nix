@@ -62,7 +62,6 @@
     ];
     casks = [
       "ghostty"
-      "claude-code"
       "figma"
       "google-chrome"
       "notion"
