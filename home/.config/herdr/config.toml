@@ -1,3 +1,4 @@
+onboarding = false
 # reference: herdr --default-config
 #
 # t = tab, w = workspace. lowercase creates, shift renames,
